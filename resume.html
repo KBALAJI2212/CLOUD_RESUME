@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+
+    <title>BALAJI - Cloud Resume</title>
+</head>
+
+<script src="script.js"></script>
+
+<body>
+    <header>
+        <h1>
+            KODUDALA BALAJI REDDY
+        </h1>
+        <p>Phone: 9494690697 | Email: <a href="mailto:balaji2212@hotmail.com">balaji2212@hotmail.com</a> | <a
+                href="https://www.linkedin.com/in/kodudala-balaji-reddy-091a3b332">LinkedIn</a>
+        </p>
+        <p id="visitor-count">Visitor Count: Loading...</p>
+
+    </header>
+
+    <section id="summary">
+        <h2>About me</h2>
+        <p>Passionate computer enthusiast with a strong foundation in cloud infrastructure and automation. Transitioning
+            from an academic background in agriculture to IT, with hands-on experience in deploying cloud-native
+            projects and CI/CD pipelines. Quick learner and highly motivated to grow in the IT industry.</p>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+
+        <h3><a href="terraform.balaji.website">ROBOSHOP</a> – Cloud-Based E-commerce Platform</h3>
+        <p>Deployed and managed a scalable, 3-tier microservices architecture from an open-source e-commerce application
+            built
+            using Node.js, Java, Python and MongoDB, Redis, RabbitMQ, MySQL as databases. Focused
+            on robust infrastructure and CI/CD automation.</p>
+        <ul>
+            <li><strong>Infrastructure as Code:</strong> Used Terraform to provision VPC, subnets (public/private/DB),
+                dual ALBs (public & internal), launch templates with spot instances, NAT instance, ACM-based HTTPS, and
+                centralized S3 logging — all automated end-to-end with a
+                single apply.</li>
+            <li><strong>CI/CD Automation:</strong> Built a Jenkins-as-Code pipeline with GitHub webhooks,
+                change-in-code detection logic, automated Docker image builds and tagging, and safe live redeployment
+                workflows with
+                user approval.</li>
+            <li><strong>Containerized Deployment:</strong> Dockerized all microservices and managed deployment with
+                Docker Compose; container images hosted on <a
+                    href="https://hub.docker.com/r/kbalaji2212/roboshop/tags">Docker Hub</a>.</li>
+            <li><strong>Monitoring Stack:</strong> Integrated Prometheus (scraping), Grafana (dashboards), cAdvisor, and
+                Node Exporter to monitor hosts and containers.</li>
+            <li><strong>Network & Security:</strong> Enforced subnet-level isolation with zero internet exposure for app
+                and database tiers; enabled HTTPS via ACM and routed traffic using host-based rules through internal
+                ALB.</li>
+        </ul>
+        <p>Explore isolated Roboshop deployments configured using:
+            <a href="shell.balaji.website">Shell-Scripting</a>,
+            <a href="ansible.balaji.website">Ansible</a>,
+            <a href="docker.balaji.website">Docker</a>,
+            <a href="terraform.balaji.website">Terraform</a>,
+            <a href="jenkins.balaji.website">Jenkins</a>.
+            For Full project source and documentation please visit my <strong><a
+                    href="https://github.com/KBALAJI2212/ROBO_SHOP">GitHub</a></strong>.
+
+        </p>
+        <h3>Cloud Resume Challenge</h3>
+        <p>summary of Cloud Resume</p>
+    </section>
+
+    <section id="certifications">
+        <h2>Certifications</h2>
+        <ul>
+            <li>AWS Certified Solutions Architect - Associate[SAA-03].Link to cert</li>
+            <li>Terraform Associate [003].Link to cert</li>
+        </ul>
+    </section>
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li>AWS</li>
+            <li>Terraform</li>
+            <li>Shell</li>
+            <li>Ansible</li>
+            <li>CI/CD pipelines using Jenkins</li>
+            <li>Docker Containerization</li>
+            <li>Monitoring Stack-Grafana for dashboards,Prometheus for Data Scraping,CAdvisor and Node-exporter for host
+                and containers metrics.</li>
+        </ul>
+    </section>
+
+    <section id="education">
+        <h2>Education</h2>
+
+        <h3>Bachelor of Science in Agriculture</h3>
+        <p>Lovely Professional University — Graduated 2023</p>
+
+        <h3>Intermediate Education</h3>
+        <p>Narayana Junior College — Completed 2019</p>
+
+        <h3>Secondary School</h3>
+        <p>Narayana English Medium School — Completed 2017</p>
+    </section>
+</body>
+
+</html>
