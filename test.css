@@ -9,10 +9,25 @@ body {
 }
 
 #visitor-count {
-    margin-top: 15px;
+    margin-top: 25px;
     font-size: 0.9em;
-    color: #666;
+    color: #444;
     margin-left: 20px;
+    text-align: center;
+
+}
+
+.badge-container {
+    display: flex;
+    gap: 20px;
+    /* Space between badges */
+    align-items: center;
+    flex-wrap: wrap;
+    /* Makes it responsive on smaller screens */
+}
+
+.badge-item {
+    text-align: center;
 }
 
 header {
@@ -37,7 +52,6 @@ h3 {
     margin-top: 20px;
     margin-bottom: 5px;
 }
-
 
 p {
     margin-top: 5px;

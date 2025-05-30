@@ -1,0 +1,93 @@
+pipeline {
+    agent any
+
+    options {
+        skipDefaultCheckout()
+    }
+    environment {
+        TF_DIR = 'terraform' 
+    }
+
+    stages {
+        stage('Checkout Code') {
+            steps {
+                git branch: 'main', url: 'https://github.com/KBALAJI2212/CLOUD_RESUME'
+            }
+        }
+
+        stage('Detect Changes') {
+            steps {
+                script {
+                    def changedFiles = sh(
+                        script: "git diff --name-only HEAD~1 HEAD | sort -u",
+                        returnStdout: true
+                    ).trim().split("\n")
+
+                    def relevantChanges = changedFiles.findAll {
+                        it ==~ /.*\\.tf$/ || it ==~ /.*\\.tfvars$/ || it ==~ /.*\\.css$/ || it ==~ /.*\\.html$/ || it ==~ /.*\\.zip$/ || it ==~ /.*\\.js$/
+                    }
+
+                    if (relevantChanges.isEmpty()) {
+                        echo "No relevant changes found. Skipping pipeline."
+                        currentBuild.result = 'SUCCESS'
+                        env.SKIP_BUILD = 'true'
+                    } else {
+                        env.RELEVANT_CHANGES_STR = relevantChanges.join('\n')
+                        env.SKIP_BUILD = 'false'
+                        echo "Detected changes:\n${env.RELEVANT_CHANGES_STR}"
+                    }
+                }
+            }
+        }
+
+        stage('Terraform Plan') {
+            when {
+                expression { return env.SKIP_BUILD != 'true' }
+            }
+            steps {
+                dir("${env.WORKSPACE}/${TF_DIR}") {
+                    sh 'terraform init -input=false'
+                    sh 'terraform plan -out=tfplan.out'
+                }
+            }
+        }
+
+        stage('Approve Apply') {
+            when {
+                expression { return env.SKIP_BUILD != 'true' }
+            }
+            steps {
+                script {
+                    def userInput = input(
+                        message: "Terraform Plan complete for:\n${env.RELEVANT_CHANGES_STR}\nDo you want to apply?",
+                        ok: "Submit",
+                        parameters: [
+                            choice(
+                                name: 'Confirm Build',
+                                choices: ['Yes', 'No'],
+                                description: 'Select Yes to continue or No to abort the build stage'
+                            )
+                        ]
+                    )
+
+                    if (userInput == 'No') {
+                        echo "User aborted the deployment."
+                        currentBuild.result = 'ABORTED'
+                        return
+                    }
+                }
+            }
+        }
+
+        stage('Terraform Apply') {
+            when {
+                expression { return env.SKIP_BUILD != 'true' }
+            }
+            steps {
+                dir("${env.WORKSPACE}/${TF_DIR}") {
+                    sh 'terraform apply -auto-approve tfplan.out'
+                }
+            }
+        }
+    }
+}
