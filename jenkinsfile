@@ -12,6 +12,8 @@ pipeline {
         stage('Checkout Code') {
             steps {
                 git branch: 'main', url: 'https://github.com/KBALAJI2212/CLOUD_RESUME'
+                sh 'git fetch origin main'
+
             }
         }
 
