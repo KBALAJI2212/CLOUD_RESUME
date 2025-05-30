@@ -41,12 +41,13 @@ h1 {
 }
 
 h2 {
+    font-size: 1.2em;
     border-bottom: 2px solid #ccc;
     padding-bottom: 5px;
     margin-top: 20px;
 }
 
-h3 {
+h4 {
     padding-bottom: 5px;
     margin-top: 20px;
     margin-bottom: 5px;
@@ -55,6 +56,12 @@ h3 {
 p {
     margin-top: 5px;
     margin-bottom: 10px;
+}
+
+p1 {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-size: 0.9em;
 }
 
 a {
