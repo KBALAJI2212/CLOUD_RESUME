@@ -25,6 +25,8 @@ pipeline {
                         returnStdout: true
                     ).trim().split("\n")
 
+                    echo "Detected changes in: ${changedFiles}"
+
                    def relevantChanges = changedFiles.findAll { file ->
                         file.endsWith(".tf") ||
                         file.endsWith(".tfvars") ||
@@ -41,7 +43,7 @@ pipeline {
                     else {
                         env.RELEVANT_CHANGES_STR = relevantChanges.join('\n')
                         env.SKIP_BUILD = 'false'
-                        echo "Detected changes in:\n${env.RELEVANT_CHANGES_STR}"
+                        echo "Service Affecting Files:\n${env.RELEVANT_CHANGES_STR}"
                     }
                 }
             }
@@ -54,7 +56,7 @@ pipeline {
             steps {
                 dir("${env.WORKSPACE}/${TF_DIR}") {
                     sh 'terraform init -input=false'
-                    sh 'terraform plan -out=tfplan.out'
+                    sh 'terraform plan'
                 }
             }
         }
@@ -92,7 +94,7 @@ pipeline {
             }
             steps {
                 dir("${env.WORKSPACE}/${TF_DIR}") {
-                    sh 'terraform apply -auto-approve tfplan.out'
+                    sh 'terraform apply -auto-approve '
                 }
             }
         }
