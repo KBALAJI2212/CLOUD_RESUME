@@ -36,19 +36,13 @@ A resume website hosted on AWS, integrated with a real-time visitor counter back
 
 ## Tools and Implementation
 
-| Frontend Hosting | Amazon S3 + CloudFront |
-
-| TLS/SSL          | AWS ACM                |
-
-| Visitor Counter  | AWS Lambda + DynamoDB  |
-
-| CI/CD            | Jenkins                |
-
-| IaC              | Terraform              |
-
-| Logging          | CloudWatch Logs        |
-
-| Domain Management | Route 53              |
+- **Frontend Hosting:** Amazon S3 + CloudFront  
+- **TLS / SSL:** AWS Certificate Manager (ACM)  
+- **Visitor Counter:** AWS Lambda + DynamoDB  
+- **CI/CD:** Jenkins  
+- **Infrastructure as Code:** Terraform  
+- **Logging:** CloudWatch Logs  
+- **Domain Management:** Route 53  
 
 
 ---
