@@ -25,18 +25,23 @@ pipeline {
                         returnStdout: true
                     ).trim().split("\n")
 
-                    def relevantChanges = changedFiles.findAll {
-                        it ==~ /.*\\.tf$/ || it ==~ /.*\\.tfvars$/ || it ==~ /.*\\.css$/ || it ==~ /.*\\.html$/ || it ==~ /.*\\.zip$/ || it ==~ /.*\\.js$/
+                   def relevantChanges = changedFiles.findAll { file ->
+                        file.endsWith(".tf") ||
+                        file.endsWith(".tfvars") ||
+                        file.endsWith(".css") ||
+                        file.endsWith(".html") ||
+                        file.endsWith(".zip") ||
+                        file.endsWith(".js")
                     }
-
-                    if (relevantChanges.isEmpty()) {
+                     if (relevantChanges.isEmpty()) {
                         echo "No relevant changes found. Skipping pipeline."
                         currentBuild.result = 'SUCCESS'
                         env.SKIP_BUILD = 'true'
-                    } else {
+                    } 
+                    else {
                         env.RELEVANT_CHANGES_STR = relevantChanges.join('\n')
                         env.SKIP_BUILD = 'false'
-                        echo "Detected changes:\n${env.RELEVANT_CHANGES_STR}"
+                        echo "Detected changes in:\n${env.RELEVANT_CHANGES_STR}"
                     }
                 }
             }
