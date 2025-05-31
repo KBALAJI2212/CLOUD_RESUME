@@ -32,6 +32,13 @@ A resume website hosted on AWS, integrated with a real-time visitor counter back
 - **Domain & DNS**:
   - Custom domain (`balaji.website`) managed through **Route 53**.
 
+
+  <h2>ARCHITECTURE DIAGRAM</h2>
+  
+  <p float="left">
+    <img src="CLOUDRESUME_LAYOUT.png" width="600"/>
+  </p>
+
 ---
 
 ## Tools and Implementation

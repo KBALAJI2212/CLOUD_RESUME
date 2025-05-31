@@ -65,10 +65,9 @@ resource "aws_cloudfront_distribution" "cloud_resume_s3_hosting_distribution" {
     }
   }
 
-  enabled             = true
-  is_ipv6_enabled     = true
-  default_root_object = "resume.html"
-  aliases             = ["balaji.website"]
+  enabled         = true
+  is_ipv6_enabled = true
+  aliases         = ["balaji.website"]
 
   default_cache_behavior {
     allowed_methods  = ["GET", "HEAD"]
