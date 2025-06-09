@@ -1,121 +1,150 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <link rel="stylesheet" href="style.css">
-    <meta charset="UTF-8">
-
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>BALAJI - Cloud Resume</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<script src="script.js"></script>
+<body class="bg-[#f7f9fc] text-[#333] font-sans max-w-full p-4 my-2 overflow-x-hidden">
 
-<body>
-    <header style="display: flex; justify-content: center; align-items: center; margin-top: 20px; gap: 30px;">
-        <img src="pp.jpg" alt="Profile Photo" style="width: 120px; height: 120px; border-radius: 50%;">
-
-        <div style="text-align: center;">
-            <h1>KODUDALA BALAJI REDDY</h1>
-            <p>
+    <header class="flex justify-center items-center gap-8 mt-1">
+        <img src="images/pp.jpg" alt="Profile Photo" style="width: 110px; height: 110px; border-radius: 100%;">
+        <div class="text-center">
+            <h1 class="text-4xl mb-1 mt-5 font-normal">KODUDALA BALAJI REDDY</h1>
+            <p class="mb-2 text-base">
                 Phone: 9494690697 |
-                Email: <a href="mailto:balaji2212@hotmail.com">balaji2212@hotmail.com</a> |
-                <a href="https://www.linkedin.com/in/kodudala-balaji-reddy-091a3b332">LinkedIn</a>
+                Email: <a href="mailto:balaji2212@hotmail.com"
+                    class="text-[#0077cc] hover:underline">balaji2212@hotmail.com</a> |
+                <a href="https://www.linkedin.com/in/kbalaji2212" class="text-[#0077cc] hover:underline">LinkedIn</a>
             </p>
-            <p id="visitor-count">Visitor Count: Loading...</p>
+            <p id="visitor-count"
+                class="mt-6 ml-5 text-sm font-thick text-[#333] text-center tracking-wide px-4 py-2 border border-gray-300 rounded-full inline-block bg-[#f9f9f9] shadow-md shadow-black/30">
+            </p>
         </div>
     </header>
 
-    <section id="summary">
-        <h2>About me</h2>
-        <p>Passionate computer enthusiast with a strong foundation in cloud infrastructure and automation. Transitioning
+    <section id="summary"
+        class="bg-[#f9f9f9] p-4 mx-auto my-3 max-w-full shadow-md shadow-black/10 hover:shadow-lg hover:shadow-black/30 transition-shadow rounded">
+        <h2
+            class="text-center text-md font-semibold mb-4 px-4 py-2 border border-gray-300 rounded-full inline-block bg-[#f9f9f9] shadow-md shadow-black/30">
+            About me</h2>
+        <p class="mt-1 mb-3">Passionate computer enthusiast with a strong foundation in cloud infrastructure and
+            automation. Transitioning
             from an academic background in agriculture to IT, with hands-on experience in deploying cloud-native
             projects and CI/CD pipelines. Quick learner and highly motivated to grow in the IT industry.</p>
     </section>
 
-    <section id="projects">
-        <h2>Projects</h2>
+    <section id="projects"
+        class="bg-[#f9f9f9] p-4 mx-auto my-3 max-w-full shadow-md shadow-black/10 hover:shadow-lg hover:shadow-black/30 transition-shadow rounded">
+        <h2
+            class="text-center text-md font-semibold mb-4 px-4 py-2 border border-gray-300 rounded-full inline-block bg-[#f9f9f9] shadow-md shadow-black/30">
+            Projects</h2>
 
-        <h3><a href="https://terraform.balaji.website">ROBOSHOP</a> - An E-commerce Platform</h3>
-        <p>Deployed and managed a scalable, <strong>3-Tier</strong> microservices architecture from an open-source
-            e-commerce application
-            built
-            using Node.js, Java, Python and MongoDB, Redis, RabbitMQ, MySQL as databases. Focused
+        <h3 class="text-lg mb-2">
+            <span class="text-[#0077cc]">ROBOSHOP</span> - An E-commerce Platform
+        </h3>
+
+        <p class="mb-3">Deployed and managed a scalable, <strong>3-Tier</strong> microservices architecture from an
+            open-source
+            e-commerce application built using Node.js, Java, Python and MongoDB, Redis, RabbitMQ, MySQL as databases.
+            Focused
             on robust infrastructure and CI/CD automation.</p>
-        <ul>
-            <li><strong>Infrastructure as Code:</strong> Used Terraform to provision VPC, subnets (public/private/DB),
+
+        <ul class="mt-4 pl-5 list-disc">
+            <li class="mb-2"><strong>Infrastructure as Code:</strong> Used Terraform to provision VPC, subnets
+                (public/private/DB),
                 dual ALBs (public & internal), launch templates with spot instances, NAT instance, ACM-based HTTPS, and
                 centralized S3 logging — all automated end-to-end with a
                 single apply.</li>
-            <li><strong>CI/CD Automation:</strong> Built a Jenkins-as-Code pipeline with GitHub webhooks,
+            <li class="mb-2"><strong>CI/CD Automation:</strong> Built a Jenkins-as-Code pipeline with GitHub webhooks,
                 change-in-code detection logic, automated Docker image builds and tagging, and safe live redeployment
                 workflows with
                 user approval.</li>
-            <li><strong>Containerized Deployment:</strong> Dockerized all microservices and managed deployment with
-                Docker Compose; container images hosted on <a
-                    href="https://hub.docker.com/r/kbalaji2212/roboshop/tags">Docker Hub</a>.</li>
-            <li><strong>Monitoring Stack:</strong> Integrated Prometheus (scraping), Grafana (dashboards), cAdvisor, and
+            <li class="mb-2"><strong>Containerized Deployment:</strong> Dockerized all microservices and managed
+                deployment with
+                Docker Compose; container images hosted on <a href="https://hub.docker.com/r/kbalaji2212/roboshop/tags"
+                    class="text-[#0077cc] hover:underline">Docker Hub</a>.</li>
+            <li class="mb-2"><strong>Configuration Automation:</strong> Used Ansible and Shell scripts to automate
+                setup,
+                configuration, and deployment of services across multiple environments, ensuring consistency and
+                repeatability.</li>
+            <li class="mb-2"><strong>Monitoring Stack:</strong> Integrated Prometheus (scraping), Grafana (dashboards),
+                cAdvisor, and
                 Node Exporter to monitor hosts and containers.</li>
-            <li><strong>Network & Security:</strong> Enforced subnet-level isolation with zero internet exposure for app
+            <li class="mb-2"><strong>Network & Security:</strong> Enforced subnet-level isolation with zero internet
+                exposure for app
                 and database tiers; enabled HTTPS via ACM and routed traffic using host-based rules through internal
                 ALB.</li>
         </ul>
-        <p>Explore isolated Roboshop deployments configured using:
-            <a href="https://shell.balaji.website">Shell-Scripting</a>,
-            <a href="https://ansible.balaji.website">Ansible</a>,
-            <a href="https://docker.balaji.website">Docker</a>,
-            <a href="https://terraform.balaji.website">Terraform</a>,
-            <a href="https://jenkins.balaji.website">Jenkins</a>.
-            For Full project source and documentation please visit my <strong><a
-                    href="https://github.com/KBALAJI2212/ROBO_SHOP">GitHub</a></strong>.
-
+        <p class="mb-6">Explore isolated Roboshop deployments configured using:
+            Shell-Scripting, Ansible, Docker, Terraform, Jenkins <a href="home.html"
+                class="text-[#0077cc] hover:underline">here</a>.
+            For Full project source and documentation please visit my <a href="https://github.com/KBALAJI2212/ROBO_SHOP"
+                class="text-[#0077cc] hover:underline">GitHub</a>.
         </p>
 
-        <hr style="width: 450px; margin: 35px auto; border: 1px solid #ccc;">
+        <hr class="w-[80%] mx-auto my-9 border border-gray-300">
 
-        <h3><a href="https://balaji.website/">Cloud Resume Challenge</a> - A Serverless AWS Web Application</h3>
+        <h3 class="text-lg mb-2">
+            <span class="text-[#0077cc]">CLOUD RESUME</span> - A Serverless AWS Web Application
+        </h3>
 
-        <p>Designed and deployed a fully serverless web application on AWS to host a personal resume site with an
+        <p class="mb-3">Designed and deployed a fully serverless web application on AWS to host a personal resume site
+            with an
             integrated visitor counter, showcasing hands-on expertise in cloud architecture, automation, and
             deployment.</p>
 
-        <ul>
-            <li><strong>Frontend:</strong> Developed a responsive static website using HTML, CSS, and JavaScript,
+        <ul class="mt-4 pl-5 list-disc">
+            <li class="mb-2"><strong>Frontend:</strong> Developed a responsive static website using HTML, CSS, and
+                JavaScript,
                 hosted on Amazon S3, and delivered securely and globally via CloudFront CDN with HTTPS enabled
                 through AWS Certificate Manager (ACM).</li>
 
-            <li><strong>Backend:</strong> Implemented a serverless backend using Python-based AWS Lambda function
+            <li class="mb-2"><strong>Backend:</strong> Implemented a serverless backend using Python-based AWS Lambda
+                function
                 and DynamoDB as database to
                 track and store visitor counts. Utilized Lambda Function URLs for a simplified, API Gateway-free
                 integration with frontend JavaScript.</li>
 
-            <li><strong>Automation:</strong> Integrated CI/CD using Jenkins to automatically deploy changes to
+            <li class="mb-2"><strong>Automation:</strong> Integrated CI/CD using Jenkins to automatically deploy changes
+                to
                 backend infrastructure and code, ensuring efficient and reliable delivery pipelines.</li>
 
-            <li><strong>Infrastructure as Code:</strong> Employed Terraform to provision and manage all AWS
+            <li class="mb-2"><strong>Infrastructure as Code:</strong> Employed Terraform to provision and manage all AWS
                 resources, ensuring reproducibility, scalability, and version-controlled infrastructure.</li>
 
-            <li><strong>Monitoring & Logging:</strong> Enabled CloudWatch Logs for backend observability and
+            <li class="mb-2"><strong>Monitoring & Logging:</strong> Enabled CloudWatch Logs for backend observability
+                and
                 operational insight.</li>
 
-            <li><strong>Domain & DNS:</strong> Configured a custom domain with Route 53, improving accessibility and
+            <li class="mb-2"><strong>Domain & DNS:</strong> Configured a custom domain with Route 53, improving
+                accessibility and
                 establishing a professional web presence.</li>
         </ul>
-        <p>For Full project source and documentation please visit my <strong><a
-                    href="https://github.com/KBALAJI2212/CLOUD_RESUME">GitHub.</a></strong></p>
-
+        <p class="mb-6">For Full project source and documentation please visit my <a
+                href="https://github.com/KBALAJI2212/CLOUD_RESUME" class="text-[#0077cc] hover:underline">GitHub.</a>
+        </p>
     </section>
 
-    <section id="certifications">
-        <h2>Certifications</h2>
-        <div class="badge-container">
-            <div class="badge-item">
-                <div data-iframe-width="350" data-iframe-height="200"
+    <section id="certifications"
+        class="bg-[#f9f9f9] p-4 mx-auto my-3 max-w-full shadow-md shadow-black/10 hover:shadow-lg hover:shadow-black/30 transition-shadow rounded">
+        <h2
+            class="text-center text-md font-semibold mb-4 px-4 py-2 border border-gray-300 rounded-full inline-block bg-[#f9f9f9] shadow-md shadow-black/30">
+            Certifications
+        </h2>
+
+        <div class="flex justify-start flex-wrap gap-x-8 gap-y-4">
+            <div class="max-w-full w-full sm:w-[350px] flex justify-center">
+                <div data-iframe-width="340" data-iframe-height="220"
                     data-share-badge-id="398b6e0b-0b5c-45e7-8845-84e6410393cc"
                     data-share-badge-host="https://www.credly.com"></div>
             </div>
 
-            <div class="badge-item">
-                <div data-iframe-width="350" data-iframe-height="200"
+            <div class="max-w-full w-full sm:w-[350px] flex justify-center">
+                <div data-iframe-width="340" data-iframe-height="220"
                     data-share-badge-id="660d0dfb-bd21-4c0c-8369-93e0cc19ea7c"
                     data-share-badge-host="https://www.credly.com"></div>
             </div>
@@ -124,31 +153,58 @@
         <script type="text/javascript" async src="https://cdn.credly.com/assets/utilities/embed.js"></script>
     </section>
 
-    <section id="skills">
-        <h2>Skills</h2>
-        <ul>
-            <li>AWS (EC2, S3, IAM, VPC, Load Balancing, Auto Scaling, Route53)</li>
-            <li>Infrastructure as Code with Terraform (modular & remote state setup)</li>
-            <li>Configuration management using Ansible for multi-tier deployments</li>
-            <li>CI/CD pipelines with Jenkins (Git integration, build/test/deploy)</li>
-            <li>Docker containerization of microservices using Docker & Compose</li>
-            <li>Basic monitoring setup with Prometheus, Grafana, cAdvisor, and Node Exporter</li>
-            <li>Scripting with Shell for automation and environment setup</li>
+
+
+
+    <section id="skills"
+        class="bg-[#f9f9f9] p-4 mx-auto my-3 max-w-full shadow-md shadow-black/10 hover:shadow-lg hover:shadow-black/30 transition-shadow rounded">
+        <h2
+            class="text-center text-md font-semibold mb-4 px-4 py-2 border border-gray-300 rounded-full inline-block bg-[#f9f9f9] shadow-md shadow-black/30">
+            Skills</h2>
+        <ul class="list-disc pl-5 mt-3">
+            <li class="mb-2">AWS (EC2, S3, IAM, VPC, Load Balancing, Auto Scaling, Route53)</li>
+            <li class="mb-2">Infrastructure as Code with Terraform (modular & remote state setup)</li>
+            <li class="mb-2">Configuration management using Ansible for multi-tier deployments</li>
+            <li class="mb-2">CI/CD pipelines with Jenkins (Git integration, build/test/deploy)</li>
+            <li class="mb-2">Docker containerization of microservices using Docker & Compose</li>
+            <li class="mb-2">Basic monitoring setup with Prometheus, Grafana, cAdvisor, and Node Exporter</li>
+            <li class="mb-2">Scripting with Shell for automation and environment setup</li>
         </ul>
     </section>
 
-    <section id="education">
-        <h2>Education</h2>
+    <section id="education"
+        class="bg-[#f9f9f9] p-4 mx-auto my-3 max-w-full shadow-md shadow-black/10 hover:shadow-lg hover:shadow-black/30 transition-shadow rounded">
+        <h2
+            class="text-center text-md font-semibold mb-4 px-4 py-2 border border-gray-300 rounded-full inline-block bg-[#f9f9f9] shadow-md shadow-black/30">
+            Education</h2>
 
-        <h4>Bachelor of Science in Agriculture</h4>
-        <p1>Lovely Professional University — Graduated 2023</p1>
+        <h4 class="pt-1 mb-1 mt-5">Bachelor of Science in Agriculture</h4>
+        <p class="text-sm mb-3">Lovely Professional University — Graduated 2023</p>
 
-        <h4>Intermediate Education</h4>
-        <p1>Narayana Junior College — Completed 2019</p1>
+        <h4 class="pt-1 mb-1 mt-5">Intermediate Education</h4>
+        <p class="text-sm mb-3">Narayana Junior College — Completed 2019</p>
 
-        <h4>Secondary School</h4>
-        <p1>Narayana English Medium School — Completed 2017</p1>
+        <h4 class="pt-1 mb-1 mt-5">Secondary School</h4>
+        <p class="text-sm mb-3">Narayana English Medium School — Completed 2017</p>
     </section>
+
+    <script>
+        const apiEndpoint = 'https://i5uct33ryknsfn3l4kmm4mbfte0joqvj.lambda-url.us-east-1.on.aws/';
+
+
+        async function updateVisitorCount() {
+            try {
+                const response = await fetch(apiEndpoint);
+                const data = await response.json();
+                document.getElementById('visitor-count').innerText = `Visitor Count: ${data.count}`;
+            } catch (error) {
+                console.error('Error fetching visitor count:', error);
+                document.getElementById('visitor-count').innerText = 'Visitor Count: Not Available';
+            }
+        }
+
+        updateVisitorCount();
+    </script>
 </body>
 
 </html>

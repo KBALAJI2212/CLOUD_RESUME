@@ -1,0 +1,135 @@
+<!-- Change metadata of file to Systemdefined ->cache-control ->no-cache, no-store, must-revalidate nad content-type ->"text/html" -->
+
+
+<!DOCTYPE html>
+<html lang="en" ; class="h-full">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BALAJI | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .section-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .section-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.25);
+        }
+    </style>
+</head>
+
+
+<!-- HEADER -->
+
+<body class="flex flex-col min-h-screen bg-slate-50 text-slate-800">
+
+    <header
+        class="relative bg-gradient-to-br from-indigo-700 via-sky-600 to-blue-600 text-white py-12 shadow-lg overflow-hidden">
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <h1 class="text-2xl md:text-4xl font-bold mb-3">Welcome to My Portfolio</h1>
+            <p class="text-base md:text-md text-blue-100 max-w-xl mx-auto">
+                Explore real-world projects, cloud-native deployments, and infrastructure automation demos.
+                I love cloud hosting, automating systems and designing systems that scale.
+            </p>
+        </div>
+
+        <!-- Decorative SVG -->
+        <svg class="absolute top-0 right-0 w-64 h-64 text-indigo-400 opacity-20 transform translate-x-20 -translate-y-20 z-0"
+            viewBox="0 0 200 200">
+            <path fill="currentColor"
+                d="M45.4,-63.2C58.3,-56.8,68.8,-44.2,74.6,-29.6C80.4,-15.1,81.5,1.4,77.4,17.8C73.2,34.2,63.8,50.6,49.7,59.6C35.6,68.5,17.8,70.1,0.6,69.2C-16.7,68.3,-33.5,64.8,-45.4,55.5C-57.3,46.1,-64.3,30.8,-67.4,15.5C-70.6,0.3,-69.9,-14.9,-64.8,-28.7C-59.6,-42.4,-50,-54.8,-37.5,-61.1C-24.9,-67.4,-12.4,-67.6,1.2,-69.3C14.9,-71,29.7,-74.6,45.4,-63.2Z"
+                transform="translate(100 100)" />
+        </svg>
+    </header>
+
+
+    <!-- MAIN PROJECT CARDS -->
+    <main class="flex-grow container mx-auto px-4 pt-16 pb-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+
+            <!-- Cloud Resume -->
+            <section class="bg-white p-8 rounded-2xl shadow section-card border border-blue-200">
+                <h2 class="text-2xl font-semibold mb-4">Cloud Resume</h2>
+                <p class="text-slate-600 mb-6 leading-relaxed">
+                    View my cloud-native resume hosted on AWS using Terraform, Lambda, DynamoDB, S3 and CloudFront.
+                </p>
+                <a href="resume.html"
+                    class="inline-block bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition">
+                    📄 View Resume
+                </a>
+            </section>
+
+            <!-- RoboShop -->
+            <section class="bg-white p-8 rounded-2xl shadow section-card border border-blue-200">
+                <h2 class="text-2xl font-semibold mb-4">RoboShop Deployment</h2>
+                <p class="text-slate-600 mb-6 leading-relaxed">
+                    Explore the RoboShop e-commerce platform deployed as a 3-tier architecture on AWS using Docker,
+                    Terraform, Ansible and Jenkins.
+                </p>
+                <button onclick="checkDeployments()"
+                    class="inline-block bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition">
+                    ☁️ View RoboShop
+                </button>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-800 text-slate-300 py-8">
+        <div class="container mx-auto px-4 flex flex-col items-center space-y-4 text-center">
+
+            <div class="flex space-x-6">
+
+                <!-- GitHub -->
+                <a href="https://github.com/kbalaji2212" target="_blank" class="hover:text-white transition"
+                    aria-label="GitHub">
+                    <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                        <path
+                            d="M12 0C5.37 0 0 5.373 0 12a12 12 0 008.205 11.385c.6.111.82-.258.82-.577v-2.01c-3.338.726-4.033-1.416-4.033-1.416-.547-1.39-1.335-1.758-1.335-1.758-1.09-.745.082-.729.082-.729 1.204.085 1.838 1.236 1.838 1.236 1.07 1.833 2.809 1.304 3.495.997.109-.776.42-1.305.762-1.604-2.665-.305-5.466-1.332-5.466-5.93 0-1.31.469-2.381 1.235-3.221-.124-.303-.535-1.527.117-3.181 0 0 1.008-.322 3.3 1.23a11.52 11.52 0 013.003-.404c1.018.005 2.042.138 3.002.404 2.29-1.553 3.297-1.23 3.297-1.23.653 1.654.242 2.878.118 3.181.77.84 1.233 1.911 1.233 3.221 0 4.61-2.805 5.624-5.475 5.921.432.372.816 1.102.816 2.222v3.293c0 .321.218.694.825.576A12.002 12.002 0 0024 12c0-6.627-5.373-12-12-12z" />
+                    </svg>
+                </a>
+
+                <!-- LinkedIn -->
+                <a href="https://linkedin.com/in/kbalaji2212" target="_blank" class="hover:text-white transition"
+                    aria-label="LinkedIn">
+                    <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                        <path
+                            d="M19 0h-14C2.243 0 0 2.243 0 5v14c0 2.757 2.243 5 5 5h14c2.757 0 5-2.243 5-5V5c0-2.757-2.243-5-5-5zM7.834 19H5.103V9h2.731v10zM6.468 7.794c-.874 0-1.417-.62-1.417-1.394 0-.791.559-1.394 1.45-1.394s1.417.603 1.431 1.394c0 .774-.543 1.394-1.464 1.394zM19 19h-2.73v-5.604c0-1.352-.483-2.273-1.694-2.273-.923 0-1.473.62-1.716 1.217-.089.22-.111.528-.111.837V19H10v-10h2.62v1.368c.359-.56 1.009-1.357 2.45-1.357 1.788 0 3.13 1.18 3.13 3.717V19z" />
+                    </svg>
+                </a>
+
+                <!-- Email -->
+                <a href="mailto:balaji2212@hotmail.com" class="hover:text-white transition" aria-label="Email">
+                    <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                        <path
+                            d="M1.5 4A2.5 2.5 0 014 1.5h16A2.5 2.5 0 0122.5 4v16a2.5 2.5 0 01-2.5 2.5H4A2.5 2.5 0 011.5 20V4zm2 0v.511l9 6.326 9-6.326V4a.5.5 0 00-.5-.5H4a.5.5 0 00-.5.5zm19 2.78l-8.45 5.936a1.5 1.5 0 01-1.6 0L3 6.78V20a.5.5 0 00.5.5h17a.5.5 0 00.5-.5V6.78z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function checkDeployments() {
+            const img = new Image();
+            img.onload = function () {
+                window.location.href = "deploymentup.html";
+            };
+            img.onerror = function () {
+                window.location.href = "deploymentdown.html";
+            };
+            img.src = "https://terraform.balaji.website/media/stan.png";
+        }
+    </script>
+</body>
+
+</html>

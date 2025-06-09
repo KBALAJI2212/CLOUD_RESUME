@@ -15,7 +15,7 @@
         }
 
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: auto;
         }
 
@@ -40,6 +40,24 @@
         .emoji {
             font-size: 4rem;
         }
+
+        #homebutton {
+            margin-top: 25px;
+            margin-left: 20px;
+            font-size: 0.9em;
+            font-weight: 200;
+            color: #333;
+            text-align: center;
+            letter-spacing: 0.5px;
+
+            padding: 8px 16px;
+            border: 1px solid #ccc;
+            border-radius: 9px;
+            display: inline-block;
+            background-color: #f9f9f9;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+
+        }
     </style>
 </head>
 
@@ -47,10 +65,11 @@
     <div class="container">
         <div class="emoji">🚧</div>
         <h1>RoboShop is Offline Right Now</h1>
-        <p>This project demo is available only between <strong>9 AM to 5 PM IST</strong> to reduce operational costs.
+        <p>This project demo is available only on weekdays between <strong>9 AM to 5 PM IST</strong> to reduce
+            operational costs.
         </p>
         <p>Please check back later. Thanks for your interest!</p>
-        <p><a href="https://balaji.website">Return to Resume</a></p>
+        <p id="homebutton"><a href="home.html">Return to Home</a></p>
     </div>
 </body>
 

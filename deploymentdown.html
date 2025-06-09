@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Roboshop Project Summary</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f7f9fc;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #007acc;
+            color: white;
+            padding: 1rem 2rem;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-weight: 700;
+            font-size: 1.8rem;
+        }
+
+        main {
+            max-width: 100%;
+            margin: 0.5rem;
+            padding: 0.3rem;
+        }
+
+        section.summary {
+            background: white;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+            margin-bottom: 0.75rem;
+            max-width: 100%;
+        }
+
+        section.summary h2 {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            color: #007acc;
+            font-weight: 600;
+        }
+
+        section.summary p {
+            margin: 0.2rem 0 0.6rem;
+        }
+
+        section.summary ul {
+            padding-left: 1.2rem;
+        }
+
+        section.summary li {
+            margin-bottom: 0.5rem;
+        }
+
+        .photos {
+            display: grid;
+            gap: 1.2rem;
+            justify-items: stretch;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            max-width: 100%;
+        }
+
+        @media (min-width: 960px) {
+
+            .photos {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .photos img {
+            width: 100%;
+            max-width: 480px;
+            aspect-ratio: 4 / 3;
+            object-fit: contain;
+            background-color: #f0f4f8;
+            padding: 10px;
+            border: 2px solid #ccc;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .photos img:hover {
+            transform: scale(1.03);
+            border-color: #007acc;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #666;
+            padding: 1rem 1rem 2rem;
+        }
+
+        a {
+            color: #007acc;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>ROBOSHOP E-commerce Microservices</h1>
+    </header>
+
+    <main>
+        <section class="summary">
+            <h2>Project Overview</h2>
+            <ul>
+                <li>Roboshop is a fully functional ecommerce platform built with microservices using a 3-tier scalable
+                    architecture. Users can browse products, manage carts, view orders, and ship globally.</li>
+                <li>It uses NGINX as a reverse proxy with microservices built in Node.js, Java, and Python, supported by
+                    databases MongoDB, Redis, RabbitMQ, and MySQL.</li>
+                <li>Deployment is automated using Shell scripting, Ansible, Terraform, Docker, and Jenkins, with
+                    monitoring through Grafana, Prometheus, cAdvisor, and Node Exporter.</li>
+            </ul>
+        </section>
+
+        <section class="summary">
+            <h2>Architecture & Tools</h2>
+            <ul>
+                <li><strong>Architecture:</strong> Web (NGINX), Application (microservices), and Database tiers isolated
+                    in custom VPC subnets with secure load balancing and auto-scaling.</li>
+                <li><strong>Infrastructure:</strong> Provisioned using Terraform with spot instances and NAT instance
+                    for cost efficiency.</li>
+                <li><strong>CI/CD:</strong> Automated Jenkins pipelines to build and deploy Docker containers triggered
+                    by GitHub commits.</li>
+                <li><strong>Configuration:</strong> Ansible roles and shell scripts automate service setup and
+                    deployment.</li>
+                <li><strong>Monitoring:</strong> Load balancer access logs are sent to CloudWatch Logs. Additionally, a
+                    basic monitoring stack is set up using Grafana, Prometheus, cAdvisor, and Node Exporter to track
+                    container and host-level metrics.</li>
+            </ul>
+        </section>
+
+        <section class="summary">
+            <h2>Live Deployments</h2>
+            <ul>
+                <li><strong>Terraform + Shell Setup: </strong> <a href="error.html" target="_blank">Link</a></li>
+                <li><strong>Jenkins + Docker + Monitoring Setup: </strong> <a href="error.html" target="_blank">Link</a>
+                </li>
+            </ul>
+        </section>
+
+        <section class="summary">
+            <h2>Architecture Diagrams</h2>
+            <div class="photos">
+                <img src="images/ROBOSHOP_LAYOUT.jpeg" alt="Roboshop Architecture Diagram" />
+                <img src="images/ROBOSHOP_INFRA.jpg" alt="Roboshop Infrastructure Diagram" />
+            </div>
+        </section>
+
+        <section class="summary">
+            <h2>Service Screenshots</h2>
+            <div class="photos">
+                <img src="images/user.png" alt="User Service Screenshot" />
+                <img src="images/catalogue.png" alt="Catalogue Service Screenshot" />
+                <img src="images/shipping.png" alt="Shipping Service Screenshot" />
+                <img src="images/payment.png" alt="Payment Service Screenshot" />
+                <img src="images/orderhistory.png" alt="Order History Screenshot" />
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Based on the <a href="https://github.com/instana/robot-shop" target="_blank"
+                rel="noopener noreferrer">open-source Robot Shop project</a>. This deployment demonstrates
+            infrastructure automation and management skills.</p>
+    </footer>
+</body>
+
+</html>
